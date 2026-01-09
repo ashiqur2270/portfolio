@@ -8,7 +8,7 @@
   "theme_color": "#1877f2",
   "icons": [
     {
-      "src": "https://github.com/ashiqur2270/all-in-one/blob/6d028513f676b3b148347c2b3a952cf4a8897417/icon-512.png",
+      "src": "https://raw.githubusercontent.com/ashiqur2270/all-in-one/refs/heads/main/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
