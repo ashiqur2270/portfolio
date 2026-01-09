@@ -1,0 +1,17 @@
+{
+  "name": "Ultimate Personal Dashboard Pro",
+  "short_name": "MyDashPro",
+  "description": "একটি অল-ইন-ওয়ান পার্সোনাল ড্যাশবোর্ড",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f0f2f5",
+  "theme_color": "#1877f2",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1041/1041916.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
