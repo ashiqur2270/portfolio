@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashiqur Rahman | Electronics Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ================== GLOBAL ================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'DM Sans', Tahoma, sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#222;
+  line-height:1.6;
+}
+
+/* ================== HEADER ================== */
+header{
+  background:linear-gradient(135deg,#1e3c72,#2a5298);
+  color:#fff;
+  text-align:center;
+  padding:40px 15px;
+  border-radius:0 0 25px 25px;
+}
+
+.profile-img{
+  width:140px;
+  height:140px;
+  object-fit:cover;
+  border-radius:50%;
+  border:4px solid #fff;
+  margin:15px 0;
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+header h1{
+  font-size:2.3rem;
+  font-family:'Playfair Display', serif;
+}
+
+header p{
+  opacity:.95;
+}
+
+/* contact links in header */
+.contact-links{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+.contact-links a{
+  color:#fff;
+  text-decoration:none;
+  opacity:.9;
+  transition:.2s;
+}
+.contact-links a:hover{
+  opacity:1;
+  text-decoration:underline;
+}
+
+/* ================== LANGUAGE TOGGLE ================== */
+.lang-toggle{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.lang-toggle button{
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.lang-toggle button:hover{
+  background:#fff;
+  color:#2a5298;
+  transform:scale(1.05);
+}
+
+/* ================== SECTIONS ================== */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:35px 15px;
+}
+
+section h2{
+  text-align:center;
+  color:#ffffff;
+  margin-bottom:20px;
+  font-family:'Playfair Display', serif;
+  font-size:1.8rem;
+}
+
+section h2::after{
+  content:"";
+  width:60px;
+  height:3px;
+  background:#ffffff;
+  display:block;
+  margin:8px auto 0;
+  border-radius:5px;
+}
+
+/* ================== GRID & CARD ================== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+.card h3{
+  color:#2a5298;
+  margin-bottom:10px;
+  font-family:'Playfair Display', serif;
+}
+
+.card img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:10px;
+  transition:.3s;
+}
+
+.card img:hover{
+  transform:scale(1.04);
+}
+
+.card p, .card li{
+  color:#333;
+}
+
+.card strong{
+  color:#000;
+}
+
+ul{
+  padding-left:18px;
+}
+
+ul li{
+  margin-bottom:6px;
+  color:#333;
+}
+
+/* ================== SKILL LEVEL BARS ================== */
+.skill-item{
+  margin-bottom:14px;
+}
+.skill-label{
+  display:flex;
+  justify-content:space-between;
+  font-size:.9rem;
+  margin-bottom:4px;
+  color:#333;
+}
+.skill-bar{
+  background:#e0e0e0;
+  border-radius:10px;
+  height:8px;
+  overflow:hidden;
+}
+.skill-fill{
+  height:100%;
+  border-radius:10px;
+  background:linear-gradient(90deg,#1e3c72,#2a5298);
+  transition:width 1s ease;
+}
+
+/* ================== LANGUAGE SKILL BADGES ================== */
+.lang-badge{
+  display:inline-block;
+  padding:4px 12px;
+  border-radius:20px;
+  font-size:.85rem;
+  margin:4px 4px 4px 0;
+  color:#fff;
+}
+.lang-native{ background:#1e3c72; }
+.lang-good{ background:#2a7298; }
+
+/* ================== PERSONAL INFO TABLE ================== */
+.info-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.info-table tr td{
+  padding:8px 12px;
+  color:#333;
+  border-bottom:1px solid #f0f0f0;
+}
+.info-table tr td:first-child{
+  font-weight:600;
+  color:#1e3c72;
+  width:40%;
+}
+.info-table tr:last-child td{
+  border-bottom:none;
+}
+
+/* ================== PROJECT GRID ================== */
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.project-card{
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  transition:.3s;
+}
+.project-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+.project-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+  transition:.3s;
+}
+.project-card img:hover{
+  transform:scale(1.04);
+}
+.project-info{
+  padding:14px 16px;
+}
+.project-info strong{
+  color:#1e3c72;
+  font-size:1rem;
+  display:block;
+  margin-bottom:4px;
+}
+.project-info .project-desc{
+  font-size:.85rem;
+  color:#555;
+  margin:6px 0 8px;
+  line-height:1.5;
+}
+.project-info .tech-tag{
+  display:inline-block;
+  background:#e8f0fe;
+  color:#1e3c72;
+  font-size:.75rem;
+  padding:2px 8px;
+  border-radius:10px;
+  margin:2px 2px 0 0;
+}
+
+/* ================== FOOTER ================== */
+footer{
+  background:#1e3c72;
+  color:#fff;
+  text-align:center;
+  padding:15px;
+  margin-top:40px;
+  border-radius:20px 20px 0 0;
+}
+
+/* ================== RESPONSIVE ================== */
+@media(max-width:991px){
+  header h1{font-size:2rem}
+  .profile-img{width:120px;height:120px}
+}
+
+@media(max-width:767px){
+  body{font-size:14px}
+  .grid{grid-template-columns:1fr}
+  .project-grid{grid-template-columns:1fr}
+  .profile-img{width:100px;height:100px}
+  header h1{font-size:1.7rem}
+}
+
+@media(max-width:400px){
+  header h1{font-size:1.5rem}
+  section h2{font-size:1.3rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="lang-toggle">
+    <button onclick="setLang('en')" id="btn-en">🇬🇧 EN</button>
+    <button onclick="setLang('bn')" id="btn-bn">🇧🇩 বাংলা</button>
+  </div>
+
+  <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/Ashik%20curt%20size%201%C3%971%20size%2047kb.jpg" alt="Ashiqur Rahman Photo" class="profile-img">
+
+  <h1 data-en="Ashiqur Rahman" data-bn="আশিকুর রহমান">Ashiqur Rahman</h1>
+  <p data-en="Diploma in Electronics Engineering"
+     data-bn="ডিপ্লোমা ইন ইলেকট্রনিক্স ইঞ্জিনিয়ারিং">
+     Diploma in Electronics Engineering
+  </p>
+  <div class="contact-links">
+    <span>📞 <a href="tel:01671069364">01671069364</a></span>
+    <span>✉️ <a href="mailto:ashiqur2270@gmail.com">ashiqur2270@gmail.com</a></span>
+  </div>
+  <div style="margin-top:18px;">
+    <a href="https://github.com/ashiqur2270/portfolio/raw/refs/heads/main/Ashiqur%20Rahman%20CV%202.pdf"
+       download
+       style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1e3c72;font-weight:600;padding:10px 22px;border-radius:25px;text-decoration:none;font-size:.95rem;box-shadow:0 4px 15px rgba(0,0,0,.2);transition:.3s;"
+       onmouseover="this.style.background='#f0f4ff';this.style.transform='translateY(-2px)'"
+       onmouseout="this.style.background='#fff';this.style.transform='translateY(0)'">
+      📄 <span data-en="Download CV" data-bn="সিভি ডাউনলোড করুন">Download CV</span>
+    </a>
+  </div>
+</header>
+
+<!-- ================= CAREER OBJECTIVE ================= -->
+<section>
+  <h2 data-en="Career Objective" data-bn="ক্যারিয়ার লক্ষ্য">Career Objective</h2>
+  <div class="card">
+    <p data-en="I am a Diploma in Electronics Engineering graduate seeking a challenging position in the field of Industrial Automation, IoT, or Electronics Manufacturing. I am eager to apply my practical knowledge of PLC programming, microcontroller projects, and circuit design to contribute meaningfully to a forward-thinking organization — while continuously growing as a professional."
+       data-bn="আমি একজন ডিপ্লোমা ইন ইলেকট্রনিক্স ইঞ্জিনিয়ারিং গ্র্যাজুয়েট এবং ইন্ডাস্ট্রিয়াল অটোমেশন, আইওটি বা ইলেকট্রনিক্স ম্যানুফ্যাকচারিং ক্ষেত্রে একটি চ্যালেঞ্জিং পজিশনে কাজ করতে আগ্রহী। PLC প্রোগ্রামিং, মাইক্রোকন্ট্রোলার প্রজেক্ট এবং সার্কিট ডিজাইনে আমার ব্যবহারিক জ্ঞান কাজে লাগিয়ে একটি প্রগতিশীল প্রতিষ্ঠানে অবদান রাখতে চাই।">
+      I am a Diploma in Electronics Engineering graduate seeking a challenging position in the field of Industrial Automation, IoT, or Electronics Manufacturing. I am eager to apply my practical knowledge of PLC programming, microcontroller projects, and circuit design to contribute meaningfully to a forward-thinking organization — while continuously growing as a professional.
+    </p>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section>
+  <h2 data-en="Education" data-bn="শিক্ষাগত যোগ্যতা">Education</h2>
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/mpi%20mym.jpeg" alt="Mymensingh Polytechnic Institute" style="width:100%;border-radius:10px;margin-bottom:10px;">
+      <h3 data-en="Diploma in Engineering (Electronics)" data-bn="ডিপ্লোমা ইন ইঞ্জিনিয়ারিং (ইলেকট্রনিক্স)">Diploma in Engineering (Electronics)</h3>
+      <p><strong data-en="Institute:" data-bn="প্রতিষ্ঠান:">Institute:</strong> Mymensingh Polytechnic Institute</p>
+      <p><strong data-en="Department:" data-bn="বিভাগ:">Department:</strong> Electronics</p>
+      <p><strong data-en="Board:" data-bn="বোর্ড:">Board:</strong> BTEB</p>
+      <p><strong data-en="Passing Year:" data-bn="পাসের সাল:">Passing Year:</strong> 2025</p>
+    </div>
+
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/TSC.jpg" alt="Gouripur Gov Technical School & College" style="width:100%;border-radius:10px;margin-bottom:10px;">
+      <h3 data-en="HSC (Vocational)" data-bn="এইচএসসি (ভোকেশনাল)">HSC (Vocational)</h3>
+      <p><strong data-en="Institute:" data-bn="প্রতিষ্ঠান:">Institute:</strong> Gouripur Gov. Technical School & College</p>
+      <p><strong data-en="Department:" data-bn="বিভাগ:">Department:</strong> Agro Machinery</p>
+      <p><strong data-en="Passing Year:" data-bn="পাসের সাল:">Passing Year:</strong> 2022</p>
+      <p><strong data-en="GPA:" data-bn="জিপিএ:">GPA:</strong> 4.55</p>
+    </div>
+
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/tsc%204.jpg" alt="Gouripur Gov Technical School & College" style="width:100%;border-radius:10px;margin-bottom:10px;">
+      <h3 data-en="SSC (Vocational)" data-bn="এসএসসি (ভোকেশনাল)">SSC (Vocational)</h3>
+      <p><strong data-en="Institute:" data-bn="প্রতিষ্ঠান:">Institute:</strong> Gouripur Gov. Technical School & College</p>
+      <p><strong data-en="Department:" data-bn="বিভাগ:">Department:</strong> Farm Machinery</p>
+      <p><strong data-en="Passing Year:" data-bn="পাসের সাল:">Passing Year:</strong> 2020</p>
+      <p><strong data-en="GPA:" data-bn="জিপিএ:">GPA:</strong> 4.32</p>
+    </div>
+
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/madrasa.jpeg" alt="Gouripur Islamabad Fajil Madrasa" style="width:100%;border-radius:10px;margin-bottom:10px;">
+      <h3 data-en="JSC (Madrasa)" data-bn="জেএসসি (মাদ্রাসা)">JSC (Madrasa)</h3>
+      <p><strong data-en="Institute:" data-bn="প্রতিষ্ঠান:">Institute:</strong> Gouripur Islamabad Fajil Madrasa</p>
+      <p><strong data-en="Passing Year:" data-bn="পাসের সাল:">Passing Year:</strong> 2018</p>
+      <p><strong data-en="GPA:" data-bn="জিপিএ:">GPA:</strong> 3.75</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section>
+  <h2 data-en="Skills" data-bn="দক্ষতা">Skills</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3 data-en="Technical & Professional" data-bn="কারিগরি ও পেশাদার দক্ষতা">Technical & Professional</h3>
+
+      <div class="skill-item">
+        <div class="skill-label"><span>Microsoft Office</span><span>Advanced</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>Data Entry & Research</span><span>Advanced</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>Graphic Design</span><span>Intermediate</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>PLC Programming</span><span>Intermediate</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>AutoCAD</span><span>Intermediate</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>Electronics & Circuit Design</span><span>Advanced</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>Arduino / ESP32</span><span>Intermediate</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 data-en="Personal Strengths" data-bn="ব্যক্তিগত শক্তি">Personal Strengths</h3>
+      <ul style="text-align:left;">
+        <li data-en="Strong communication & interpersonal skills" data-bn="শক্তিশালী যোগাযোগ ও আন্তঃব্যক্তিক দক্ষতা">Strong communication & interpersonal skills</li>
+        <li data-en="Comfortable with long working hours" data-bn="দীর্ঘ কর্মঘণ্টায় কাজ করতে সক্ষম">Comfortable with long working hours</li>
+        <li data-en="Fast learner and highly motivated" data-bn="দ্রুত শিক্ষার্থী এবং অত্যন্ত উদ্যমী">Fast learner and highly motivated</li>
+        <li data-en="Problem solving & analytical thinking" data-bn="সমস্যা সমাধান ও বিশ্লেষণাত্মক চিন্তাভাবনা">Problem solving & analytical thinking</li>
+        <li data-en="Ability to work independently and in teams" data-bn="একা এবং দলে উভয়ভাবে কাজ করার সক্ষমতা">Ability to work independently and in teams</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 data-en="Language Skills" data-bn="ভাষাগত দক্ষতা">Language Skills</h3>
+      <ul style="text-align:left; list-style:none; padding-left:0;">
+        <li style="margin-bottom:10px;">
+          🇧🇩 <span data-en="Bengali" data-bn="বাংলা">Bengali</span>
+          <span class="lang-badge lang-native" data-en="Native" data-bn="মাতৃভাষা">Native</span>
+        </li>
+        <li>
+          🇬🇧 <span data-en="English" data-bn="ইংরেজি">English</span>
+          <span class="lang-badge lang-good" data-en="Good" data-bn="ভালো">Good</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= PERSONAL INFORMATION ================= -->
+<section>
+  <h2 data-en="Personal Information" data-bn="ব্যক্তিগত তথ্য">Personal Information</h2>
+  <div class="card">
+    <table class="info-table">
+      <tr><td data-en="📅 Date of Birth" data-bn="📅 জন্ম তারিখ">📅 Date of Birth</td><td data-en="17 February 2004" data-bn="১৭ ফেব্রুয়ারি ২০০৪">17 February 2004</td></tr>
+      <tr><td data-en="🌍 Nationality" data-bn="🌍 জাতীয়তা">🌍 Nationality</td><td data-en="Bangladeshi" data-bn="বাংলাদেশি">Bangladeshi</td></tr>
+      <tr><td data-en="💍 Marital Status" data-bn="💍 বৈবাহিক অবস্থা">💍 Marital Status</td><td data-en="Unmarried" data-bn="অবিবাহিত">Unmarried</td></tr>
+      <tr><td data-en="🩸 Blood Group" data-bn="🩸 রক্তের গ্রুপ">🩸 Blood Group</td><td>B+</td></tr>
+      <tr><td data-en="📍 Address" data-bn="📍 ঠিকানা">📍 Address</td><td data-en="Gouripur, Mymensingh, Bangladesh" data-bn="গৌরীপুর, ময়মনসিংহ, বাংলাদেশ">Gouripur, Mymensingh, Bangladesh</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section>
+  <h2 data-en="Projects" data-bn="প্রজেক্টসমূহ">Projects</h2>
+  <div class="project-grid">
+
+    <div class="project-card">
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/p2.jpg" alt="Star Delta Reverse Forward Starter">
+      <div class="project-info">
+        <strong data-en="Automatic Star/Delta Reverse Forward Starter" data-bn="অটোমেটিক স্টার/ডেলটা রিভার্স ফরওয়ার্ড স্টার্টার">Automatic Star/Delta Reverse Forward Starter</strong>
+        <p class="project-desc" data-en="A motor control panel that automatically starts a 3-phase induction motor using Star connection, then switches to Delta for full-speed operation. It also supports Reverse and Forward direction control using contactors and a timer relay." data-bn="একটি মোটর কন্ট্রোল প্যানেল যা ৩-ফেজ ইন্ডাকশন মোটরকে স্টার সংযোগে চালু করে এবং তারপর স্বয়ংক্রিয়ভাবে ডেলটায় সুইচ করে পূর্ণ গতিতে চালায়। কনট্যাক্টর ও টাইমার রিলে ব্যবহার করে ফরওয়ার্ড ও রিভার্স দিক নিয়ন্ত্রণও করা যায়।">A motor control panel that automatically starts a 3-phase induction motor using Star connection, then switches to Delta for full-speed operation. It also supports Reverse and Forward direction control using contactors and a timer relay.</p>
+        <span class="tech-tag">Motor Control</span>
+        <span class="tech-tag">Power Electronics</span>
+        <span class="tech-tag">Contactor</span>
+        <span class="tech-tag">Timer Relay</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/p1.jpg" alt="VFD Controlling">
+      <div class="project-info">
+        <strong data-en="VFD Controlling with Switch" data-bn="সুইচ দিয়ে VFD নিয়ন্ত্রণ">VFD Controlling with Switch</strong>
+        <p class="project-desc" data-en="A Variable Frequency Drive (VFD) control system where motor speed and direction are managed using manual switches. This project demonstrates practical knowledge of industrial motor drive systems and frequency-based speed control." data-bn="একটি ভেরিয়েবল ফ্রিকোয়েন্সি ড্রাইভ (VFD) কন্ট্রোল সিস্টেম যেখানে ম্যানুয়াল সুইচ দিয়ে মোটরের গতি ও দিক নিয়ন্ত্রণ করা হয়। এই প্রজেক্টটি ইন্ডাস্ট্রিয়াল মোটর ড্রাইভ এবং ফ্রিকোয়েন্সি-ভিত্তিক গতি নিয়ন্ত্রণের ব্যবহারিক জ্ঞান প্রদর্শন করে।">A Variable Frequency Drive (VFD) control system where motor speed and direction are managed using manual switches. This project demonstrates practical knowledge of industrial motor drive systems and frequency-based speed control.</p>
+        <span class="tech-tag">VFD</span>
+        <span class="tech-tag">Motor Drive</span>
+        <span class="tech-tag">Industrial Control</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/CAM00045.jpg" alt="Arduino Light Control">
+      <div class="project-info">
+        <strong data-en="Light ON/OFF with Arduino UNO" data-bn="আরডুইনো UNO দিয়ে লাইট চালু/বন্ধ">Light ON/OFF with Arduino UNO</strong>
+        <p class="project-desc" data-en="A beginner-level embedded project where an LED or bulb is controlled using Arduino UNO microcontroller with push buttons or code-based logic. This project establishes the foundation of microcontroller programming and GPIO control." data-bn="একটি প্রাথমিক এমবেডেড প্রজেক্ট যেখানে Arduino UNO মাইক্রোকন্ট্রোলার ব্যবহার করে পুশ বাটন বা কোড-ভিত্তিক লজিকের মাধ্যমে LED বা বাল্ব নিয়ন্ত্রণ করা হয়। এটি মাইক্রোকন্ট্রোলার প্রোগ্রামিং ও GPIO নিয়ন্ত্রণের ভিত্তি স্থাপন করে।">A beginner-level embedded project where an LED or bulb is controlled using Arduino UNO microcontroller with push buttons or code-based logic. This project establishes the foundation of microcontroller programming and GPIO control.</p>
+        <span class="tech-tag">Arduino UNO</span>
+        <span class="tech-tag">Microcontroller</span>
+        <span class="tech-tag">GPIO</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/p6.webp" alt="ESP32 Light Control">
+      <div class="project-info">
+        <strong data-en="Light ON/OFF with ESP32 Microcontroller" data-bn="ESP32 মাইক্রোকন্ট্রোলার দিয়ে লাইট চালু/বন্ধ">Light ON/OFF with ESP32 Microcontroller</strong>
+        <p class="project-desc" data-en="A Wi-Fi enabled light control system built with the ESP32 microcontroller. The light can be switched ON or OFF remotely via a smartphone or web interface, showcasing the basics of IoT connectivity." data-bn="ESP32 মাইক্রোকন্ট্রোলার ব্যবহার করে তৈরি একটি Wi-Fi সক্ষম আলো নিয়ন্ত্রণ সিস্টেম। স্মার্টফোন বা ওয়েব ইন্টারফেসের মাধ্যমে দূর থেকে আলো চালু/বন্ধ করা যায়, যা IoT সংযোগের মূল বিষয়গুলো প্রদর্শন করে।">A Wi-Fi enabled light control system built with the ESP32 microcontroller. The light can be switched ON or OFF remotely via a smartphone or web interface, showcasing the basics of IoT connectivity.</p>
+        <span class="tech-tag">ESP32</span>
+        <span class="tech-tag">Wi-Fi</span>
+        <span class="tech-tag">IoT</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/p5.jpeg" alt="Home Automation">
+      <div class="project-info">
+        <strong data-en="Home Automation with ESP32 and Relay" data-bn="ESP32 ও রিলে দিয়ে হোম অটোমেশন">Home Automation with ESP32 and Relay</strong>
+        <p class="project-desc" data-en="A smart home automation system using ESP32 and relay modules to wirelessly control multiple home appliances such as fans and lights. Users can control devices through a mobile app or web browser from anywhere." data-bn="ESP32 এবং রিলে মডিউল ব্যবহার করে একটি স্মার্ট হোম অটোমেশন সিস্টেম, যার মাধ্যমে ফ্যান ও লাইটের মতো একাধিক ঘরোয়া যন্ত্রপাতি ওয়্যারলেসলি নিয়ন্ত্রণ করা যায়। মোবাইল অ্যাপ বা ওয়েব ব্রাউজার থেকে যেকোনো জায়গা থেকে ডিভাইস নিয়ন্ত্রণ করা সম্ভব।">A smart home automation system using ESP32 and relay modules to wirelessly control multiple home appliances such as fans and lights. Users can control devices through a mobile app or web browser from anywhere.</p>
+        <span class="tech-tag">ESP32</span>
+        <span class="tech-tag">Relay Module</span>
+        <span class="tech-tag">IoT</span>
+        <span class="tech-tag">Smart Home</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/solar.jpg" alt="Solar Detector">
+      <div class="project-info">
+        <strong data-en="Solar Detector" data-bn="সোলার ডিটেক্টর">Solar Detector</strong>
+        <p class="project-desc" data-en="A sensor-based circuit that detects the presence and intensity of sunlight using a photoresistor (LDR). The system can automatically trigger a relay or indicator when sufficient solar light is detected, useful for solar panel alignment or light-based automation." data-bn="একটি সেন্সর-ভিত্তিক সার্কিট যা ফটোরেজিস্টর (LDR) ব্যবহার করে সূর্যের আলোর উপস্থিতি ও তীব্রতা শনাক্ত করে। পর্যাপ্ত সূর্যালোক পাওয়া গেলে স্বয়ংক্রিয়ভাবে রিলে বা ইন্ডিকেটর চালু হয়, যা সোলার প্যানেল পজিশনিং বা আলো-ভিত্তিক অটোমেশনে উপযোগী।">A sensor-based circuit that detects the presence and intensity of sunlight using a photoresistor (LDR). The system can automatically trigger a relay or indicator when sufficient solar light is detected, useful for solar panel alignment or light-based automation.</p>
+        <span class="tech-tag">LDR Sensor</span>
+        <span class="tech-tag">Solar</span>
+        <span class="tech-tag">Sensor Circuit</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/car.jpg" alt="RC Car">
+      <div class="project-info">
+        <strong data-en="RC Car with Microcontroller" data-bn="মাইক্রোকন্ট্রোলার দিয়ে RC কার">RC Car with Microcontroller</strong>
+        <p class="project-desc" data-en="A remote-controlled car built using a microcontroller and RF/Bluetooth module. The car can be steered in multiple directions wirelessly using a remote or smartphone. This project covers motor driver circuits, wireless communication, and embedded control logic." data-bn="একটি মাইক্রোকন্ট্রোলার ও RF/Bluetooth মডিউল ব্যবহার করে তৈরি রিমোট-কন্ট্রোলড গাড়ি। রিমোট বা স্মার্টফোনের মাধ্যমে ওয়্যারলেসলি গাড়িটি বিভিন্ন দিকে চালানো যায়। এই প্রজেক্টে মোটর ড্রাইভার সার্কিট, ওয়্যারলেস কমিউনিকেশন এবং এমবেডেড কন্ট্রোল লজিক অন্তর্ভুক্ত।">A remote-controlled car built using a microcontroller and RF/Bluetooth module. The car can be steered in multiple directions wirelessly using a remote or smartphone. This project covers motor driver circuits, wireless communication, and embedded control logic.</p>
+        <span class="tech-tag">Microcontroller</span>
+        <span class="tech-tag">RF / Bluetooth</span>
+        <span class="tech-tag">Motor Driver</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <!-- ছবির লিংক এখানে বসান: আপনার GitHub এ আপলোড করে লিংক দিন -->
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/digital%20volt%20meter.jpg
+" alt="Digital Voltmeter Ammeter">
+      <div class="project-info">
+        <strong data-en="Digital Voltmeter / Ammeter" data-bn="ডিজিটাল ভোল্টমিটার / অ্যামিটার">Digital Voltmeter / Ammeter</strong>
+        <p class="project-desc" data-en="A digital measuring instrument built with Arduino UNO and LCD display that shows real-time voltage and current readings. Uses voltage divider and shunt resistor circuits for accurate measurement." data-bn="Arduino UNO ও LCD ডিসপ্লে দিয়ে তৈরি একটি ডিজিটাল পরিমাপ যন্ত্র যা রিয়েল-টাইম ভোল্টেজ ও কারেন্ট দেখায়। সঠিক পরিমাপের জন্য ভোল্টেজ ডিভাইডার ও শান্ট রেজিস্টর সার্কিট ব্যবহার করা হয়েছে।">A digital measuring instrument built with Arduino UNO and LCD display that shows real-time voltage and current readings. Uses voltage divider and shunt resistor circuits for accurate measurement.</p>
+        <span class="tech-tag">Arduino</span>
+        <span class="tech-tag">LCD Display</span>
+        <span class="tech-tag">Sensor Circuit</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <!-- ছবির লিংক এখানে বসান -->
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/IoT-Based-Temperature-and-Humidity-Measurement-using-ESP32-and-DHT11-Sensor.jpg
+" alt="Temperature Humidity Monitor">
+      <div class="project-info">
+        <strong data-en="Temperature & Humidity Monitor" data-bn="তাপমাত্রা ও আর্দ্রতা মনিটর">Temperature &amp; Humidity Monitor</strong>
+        <p class="project-desc" data-en="A real-time environmental monitoring system using DHT11 sensor and ESP32 microcontroller. Displays temperature and humidity data on screen and can send alerts when values exceed set thresholds." data-bn="DHT11 সেন্সর ও ESP32 মাইক্রোকন্ট্রোলার ব্যবহার করে তৈরি একটি রিয়েল-টাইম পরিবেশ পর্যবেক্ষণ সিস্টেম। স্ক্রিনে তাপমাত্রা ও আর্দ্রতা দেখায় এবং নির্ধারিত মান অতিক্রম করলে সতর্কতা পাঠাতে পারে।">A real-time environmental monitoring system using DHT11 sensor and ESP32 microcontroller. Displays temperature and humidity data on screen and can send alerts when values exceed set thresholds.</p>
+        <span class="tech-tag">DHT11</span>
+        <span class="tech-tag">ESP32</span>
+        <span class="tech-tag">IoT</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <!-- ছবির লিংক এখানে বসান -->
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/Automatic-Street-Light-Controller-circuit.jpg
+" alt="Automatic Street Light">
+      <div class="project-info">
+        <strong data-en="Automatic Street Light" data-bn="অটোমেটিক স্ট্রিট লাইট">Automatic Street Light</strong>
+        <p class="project-desc" data-en="An automatic street lighting system that uses an LDR (Light Dependent Resistor) and relay to turn lights ON at dusk and OFF at dawn without any manual operation. Energy efficient and fully automated." data-bn="একটি স্বয়ংক্রিয় স্ট্রিট লাইট সিস্টেম যা LDR ও রিলে ব্যবহার করে সন্ধ্যায় আলো চালু ও ভোরে বন্ধ করে — কোনো ম্যানুয়াল অপারেশন ছাড়াই। শক্তি সাশ্রয়ী ও সম্পূর্ণ স্বয়ংক্রিয়।">An automatic street lighting system that uses an LDR (Light Dependent Resistor) and relay to turn lights ON at dusk and OFF at dawn without any manual operation. Energy efficient and fully automated.</p>
+        <span class="tech-tag">LDR</span>
+        <span class="tech-tag">Relay</span>
+        <span class="tech-tag">Automation</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <!-- ছবির লিংক এখানে বসান -->
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/water-level-indicator-project-3a-alarm-project.jpg
+" alt="Water Level Indicator">
+      <div class="project-info">
+        <strong data-en="Water Level Indicator" data-bn="পানির স্তর নির্দেশক">Water Level Indicator</strong>
+        <p class="project-desc" data-en="A water level monitoring system using conductive sensors, LEDs, and a buzzer to indicate different water levels in a tank. Alerts with sound and light when the tank is full or empty, preventing overflow and dry running." data-bn="কন্ডাক্টিভ সেন্সর, LED ও বাজার ব্যবহার করে ট্যাংকে পানির বিভিন্ন স্তর নির্দেশ করার সিস্টেম। ট্যাংক পূর্ণ বা খালি হলে শব্দ ও আলো দিয়ে সতর্ক করে, উপচে পড়া ও শুকিয়ে যাওয়া রোধ করে।">A water level monitoring system using conductive sensors, LEDs, and a buzzer to indicate different water levels in a tank. Alerts with sound and light when the tank is full or empty, preventing overflow and dry running.</p>
+        <span class="tech-tag">Sensor</span>
+        <span class="tech-tag">LED</span>
+        <span class="tech-tag">Buzzer</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <!-- ছবির লিংক এখানে বসান -->
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/Fire%20Alarm%20System.jpeg
+" alt="Fire Alarm System">
+      <div class="project-info">
+        <strong data-en="Fire Alarm System" data-bn="ফায়ার অ্যালার্ম সিস্টেম">Fire Alarm System</strong>
+        <p class="project-desc" data-en="A fire detection and alarm system using a flame sensor and buzzer connected to Arduino. When fire or flame is detected, the buzzer immediately triggers an alarm to alert people, useful for homes and small workshops." data-bn="ফ্লেম সেন্সর ও বাজার ব্যবহার করে Arduino-তে তৈরি আগুন শনাক্তকরণ ও অ্যালার্ম সিস্টেম। আগুন বা শিখা শনাক্ত হলে বাজার সাথে সাথে অ্যালার্ম বাজায়, বাড়ি ও ছোট কারখানার জন্য উপযোগী।">A fire detection and alarm system using a flame sensor and buzzer connected to Arduino. When fire or flame is detected, the buzzer immediately triggers an alarm to alert people, useful for homes and small workshops.</p>
+        <span class="tech-tag">Flame Sensor</span>
+        <span class="tech-tag">Arduino</span>
+        <span class="tech-tag">Buzzer</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <!-- ছবির লিংক এখানে বসান -->
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/door%20look.jpg" alt="Digital Door Lock">
+      <div class="project-info">
+        <strong data-en="Digital Door Lock" data-bn="ডিজিটাল ডোর লক">Digital Door Lock</strong>
+        <p class="project-desc" data-en="A password-protected digital door lock system using a 4x4 keypad, Arduino, and solenoid lock. The door unlocks only when the correct password is entered, providing secure access control for rooms or offices." data-bn="4x4 কীপ্যাড, Arduino ও সোলেনয়েড লক ব্যবহার করে তৈরি পাসওয়ার্ড-সুরক্ষিত ডিজিটাল দরজার তালা। সঠিক পাসওয়ার্ড দিলেই দরজা খোলে, ঘর বা অফিসের জন্য নিরাপদ অ্যাক্সেস কন্ট্রোল।">A password-protected digital door lock system using a 4x4 keypad, Arduino, and solenoid lock. The door unlocks only when the correct password is entered, providing secure access control for rooms or offices.</p>
+        <span class="tech-tag">Keypad</span>
+        <span class="tech-tag">Arduino</span>
+        <span class="tech-tag">Solenoid Lock</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <!-- ছবির লিংক পরে বসান: YOUR_IMAGE_energy_meter.jpg -->
+      <img src="https://raw.githubusercontent.com/ashiqur2270/portfolio/refs/heads/main/ESP32-Energy-Meter.jpg"
+           onerror="this.src='https://placehold.co/600x400/1e3c72/ffffff?text=Smart+Energy+Meter'">
+      <div class="project-info">
+        <strong data-en="Smart Energy Meter" data-bn="স্মার্ট এনার্জি মিটার">Smart Energy Meter</strong>
+        <p class="project-desc" data-en="A smart energy monitoring system using ESP32 and a current sensor (ACS712) that measures real-time voltage, current, power, and energy consumption. Data is displayed on an OLED/LCD screen and can also be monitored remotely via Wi-Fi, helping users track and reduce electricity usage." data-bn="ESP32 ও কারেন্ট সেন্সর (ACS712) ব্যবহার করে তৈরি স্মার্ট এনার্জি মনিটরিং সিস্টেম যা রিয়েল-টাইমে ভোল্টেজ, কারেন্ট, পাওয়ার ও বিদ্যুৎ খরচ পরিমাপ করে। ডেটা OLED/LCD স্ক্রিনে দেখা যায় এবং Wi-Fi এর মাধ্যমে দূর থেকেও পর্যবেক্ষণ করা সম্ভব।">A smart energy monitoring system using ESP32 and a current sensor (ACS712) that measures real-time voltage, current, power, and energy consumption. Data is displayed on an OLED/LCD screen and can also be monitored remotely via Wi-Fi, helping users track and reduce electricity usage.</p>
+        <span class="tech-tag">ESP32</span>
+        <span class="tech-tag">ACS712</span>
+        <span class="tech-tag">OLED Display</span>
+        <span class="tech-tag">IoT</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Ashiqur Rahman</p>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    if (el.children.length === 0) {
+      el.innerText = el.getAttribute("data-" + lang);
+    }
+  });
+  document.getElementById("btn-en").style.opacity = (lang === "en") ? "1" : "0.6";
+  document.getElementById("btn-bn").style.opacity = (lang === "bn") ? "1" : "0.6";
+}
+setLang("en");
+</script>
+</body>
+</html>
